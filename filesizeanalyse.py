@@ -70,21 +70,6 @@ def main():
     #
     # Die Ausgabe erfolgt auf der Konsole.
     #
-    test = False
-    if test:
-        verzeichnis_orginal = "/test1"
-        verzeichnis_to_compare = "/test2"
-        file_list_orginal = "result.txt"
-        file_list_orginal_neu_erstellen = False
-        if not os.path.isfile(file_list_orginal):
-            if file_list_orginal_neu_erstellen:
-                print ("orginal Fileverzeichnis wird erstellt.")
-                list_files_with_sizes(verzeichnis_orginal,file_list_orginal )
-
-        compare_with_result(verzeichnis_to_compare,file_list_orginal)
-        print ("vergleich abgeschlossen")
-        return
-
     parser = argparse.ArgumentParser(
         description="""
 Dateigrößenanalyse und Vergleich
