@@ -37,8 +37,8 @@ Die Ausgabe erfolgt auf der Konsole.
 
 ## Hinweise
 - Die Ergebnisdatei enthält nur relative Pfade und Dateigrößen, keine Zeitstempel oder Metadaten.
-- Für Windows und Linux geeignet.
-- Die Vergleichsfunktion ist robust gegenüber unterschiedlichen Mountpunkten und Groß-/Kleinschreibung.
+- alle Dateien werden in Kleinbuchstaben gespeichert bzw. verglichen
+- Ist derzeit nur auf Linux getestet
 
 ## Lizenz
 MIT License
