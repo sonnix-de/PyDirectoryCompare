@@ -1,13 +1,12 @@
 # Python Directory Compare
 
-Ein einfaches Python-Tool zum Vergleichen von Dateigrößen in Verzeichnissen – ideal zur Überprüfung von Backups, Synchronisationen oder Sicherungen.
+Ein einfaches Python-Tool zum Vergleichen von Dateigrößen in Verzeichnissen – z.B. für die Überprüfung von Backups und Synchronisationen.
 
 ## Features
 - Listet alle Dateien eines Verzeichnisses mit ihrer Größe auf
 - Speichert die Ergebnisse in einer Textdatei (relativer Pfad, Größe)
 - Vergleicht ein Verzeichnis mit einer gespeicherten Ergebnisdatei
 - Zeigt neue, gelöschte und geänderte Dateien an
-- Plattformunabhängig (Linux/Windows)
 - Groß-/Kleinschreibung der Dateinamen wird beim Vergleich ignoriert
 
 ## Beispielaufrufe
@@ -17,7 +16,6 @@ Ein einfaches Python-Tool zum Vergleichen von Dateigrößen in Verzeichnissen �
 ```bash
 python compareFolders.py scan /pfad/zum/verzeichnis ergebnis.txt
 ```
-
 **Vergleich eines Verzeichnisses mit einer Ergebnisdatei:**
 
 ```bash
@@ -36,8 +34,6 @@ Die Ausgabe erfolgt auf der Konsole.
 - Keine externen Abhängigkeiten
 
 ## Hinweise
-- Die Ergebnisdatei enthält nur relative Pfade und Dateigrößen, keine Zeitstempel oder Metadaten.
-- alle Dateien werden in Kleinbuchstaben gespeichert bzw. verglichen
 - Ist derzeit nur auf Linux getestet
 
 ## Lizenz
