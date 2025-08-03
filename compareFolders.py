@@ -63,10 +63,10 @@ def main():
     # Beispielaufrufe für die Bedienung:
     #
     # Scan eines Verzeichnisses und Speichern der Dateigrößen:
-    #   python filesizeanalyse.py scan /pfad/zum/verzeichnis ergebnis.txt
+    #   python compareFolders.py scan /pfad/zum/verzeichnis ergebnis.txt
     #
     # Vergleich eines Verzeichnisses mit einer Ergebnisdatei:
-    #   python filesizeanalyse.py compare /pfad/zum/verzeichnis ergebnis.txt
+    #   python compareFolders.py compare /pfad/zum/verzeichnis ergebnis.txt
     #
     # Die Ausgabe erfolgt auf der Konsole.
     #
@@ -76,10 +76,10 @@ Dateigrößenanalyse und Vergleich
 
 Beispielaufrufe:
   Scan eines Verzeichnisses und Speichern der Dateigrößen:
-    python filesizeanalyse.py scan /pfad/zum/verzeichnis ergebnis.txt
+    python compareFolders.py scan /pfad/zum/verzeichnis ergebnis.txt
 
   Vergleich eines Verzeichnisses mit einer Ergebnisdatei:
-    python filesizeanalyse.py compare /pfad/zum/verzeichnis ergebnis.txt
+    python compareFolders.py compare /pfad/zum/verzeichnis ergebnis.txt
 
 Die Ausgabe erfolgt auf der Konsole.
 """,
