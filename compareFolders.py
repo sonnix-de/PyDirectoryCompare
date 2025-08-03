@@ -1,8 +1,6 @@
 import os
-import sys
-
 import argparse
-import time
+
 
 
 def list_files_with_sizes(root_path, output_file):
@@ -21,6 +19,7 @@ def list_files_with_sizes(root_path, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         for entry in entries:
             f.write("\t".join(str(e) for e in entry) + "\n")
+    print (f" {len(entries)} Dateien und Verzeichnisse wurden erfasst")
 
 def load_file_info(result_file):
     info = {}
