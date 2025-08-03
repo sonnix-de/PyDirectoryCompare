@@ -48,14 +48,37 @@ def compare_with_result(root_path, result_file):
 
     all_files = set(old_info.keys()) | set(new_info.keys())
     print (f"{len(all_files)} Dateien und Verzeichnisse werden verglichen")
+
+    # Verzeichnisse ermitteln, die komplett fehlen
+    missing_files = [fp for fp in sorted(all_files) if old_info.get(fp) and not new_info.get(fp)]
+    missing_dirs = set()
+    for fp in missing_files:
+        dir_part = os.path.dirname(fp)
+        if dir_part:
+            missing_dirs.add(dir_part)
+
+    # Prüfe, ob ein ganzes Verzeichnis fehlt (ab 3 Dateien als ganzes Verzeichnis melden)
+    already_reported = set()
+    reported_dirs = set()
+    for dir_part in sorted(missing_dirs):
+        # Prüfe, ob dieses Verzeichnis ein Unterverzeichnis eines bereits gemeldeten ist
+        if any(dir_part == d or dir_part.startswith(d + os.sep) for d in reported_dirs):
+            continue
+        files_in_dir = [fp for fp in missing_files if fp.startswith(dir_part + os.sep) or fp == dir_part]
+        if len(files_in_dir) > 2:
+            print(f"Verzeichnis fehlt in der Sicherung: {dir_part}/")
+            already_reported.update(files_in_dir)
+            reported_dirs.add(dir_part)
+
     for file_path in sorted(all_files):
         old = old_info.get(file_path)
         new = new_info.get(file_path)
+        # Prüfe, ob file_path in einem bereits gemeldeten fehlenden Verzeichnis liegt
         if old is None:
             print(f"Nur in der Sicherung: {file_path}")
-        elif new is None:
+        elif new is None and not any(file_path == d or file_path.startswith(d + os.sep) for d in reported_dirs) and file_path not in already_reported:
             print(f"nicht gefunden in der Sicherung: {file_path}")
-        elif old['size'] != new['size']:
+        elif new is not None and old['size'] != new['size']:
             print(f"Geändert: {file_path} -> Größe: alt={old['size']} neu={new['size']}")
 
 def main():
