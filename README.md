@@ -1,4 +1,4 @@
-# FileSizeAnalyse
+# Python Directory Compare
 
 Ein einfaches Python-Tool zum Vergleichen von Dateigrößen in Verzeichnissen – ideal zur Überprüfung von Backups, Synchronisationen oder Sicherungen.
 
